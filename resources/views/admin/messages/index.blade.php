@@ -1,0 +1,56 @@
+@extends('admin.master')
+@section('title', 'messages')
+@section('contant')
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-3">
+                    <h2 class="h5 page-title">{{ __('keyWords.messages') }}</h2>
+                </div>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <x-alert-success></x-alert-success>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="5%">#</th>
+                                    <th>{{ __('keyWords.name') }}</th>
+                                    <th width="10%">{{ __('keyWords.email') }}</th>
+                                    <th width="10%">{{ __('keyWords.subject') }}</th>
+                                    <th width="15%">{{ __('keyWords.action') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (count($messages) > 0)
+                                    @foreach ($messages as $key => $message)
+                                        <tr>
+                                            <td>{{ $messages->firstItem() + $loop->index }}</td>
+                                            <td>{{ $message->name }}</td>
+                                            <td>{{ $message->email }}</td>
+                                            <td>{{ $message->subject }}</td>
+                                            <td>
+                                                <x-action-button href="{{ route('admin.messages.show', $message) }}" type='show'></x-action-button>
+                                                <x-delete-button href="{{ route('admin.messages.destroy', ['message' => $message]) }}" id="{{ $message->id }}"></x-delete-button>
+
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <x-empty-alert></x-empty-alert>
+                                @endif
+                            </tbody>
+                        </table>
+                        {{ $messages->render('pagination::bootstrap-5') }}
+                    </div>
+                </div>
+            </div> <!-- .col-12 -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Are you shure you want to delete this recorde?')) {
+                document.getElementById('form-' + id).submit();
+            }
+        }
+    </script>
+@endsection
