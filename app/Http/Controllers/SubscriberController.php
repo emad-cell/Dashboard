@@ -19,7 +19,7 @@ class SubscriberController extends Controller
     public function destroy(Subscriber $subscriber)
     {
         //
-          $subscriber->delete();
+        $subscriber->delete();
         return  to_route('admin.subscribers.index')->with('success',__('keyWords.deleted_successfully'));
     }
 }

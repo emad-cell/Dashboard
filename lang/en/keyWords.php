@@ -38,7 +38,7 @@ return [
     'add_new_features'=>'Add New Features',
     'show_features'=>'Show Features',
     'edit_features'=>'edit Features',
-     //messages
+    //messages
     'messages'=>'Messages',
     'message'=>'Message',
     'show_messages'=>'Show Messages',
@@ -46,5 +46,12 @@ return [
     'name'=>'Name',
     //subscribers
     'subscribers'=>'Subscribers',
+    //testimonials
+    'testimonials'=>'Testimonials',
+    'position'=>'Position',
+    'image'=>'Image',
+    'add_new_testimonials'=>'Add New Testimonials',
+    'show_testimonials'=>'Show Testimonials',
+    'edit_testimonials'=>'edit Testimonials',
 
 ];

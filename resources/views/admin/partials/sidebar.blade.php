@@ -37,6 +37,8 @@
                 icon="fe-message-square"></x-sidebar-tab>
             <x-sidebar-tab href="{{ route('admin.subscribers.index') }}" name="{{ __('KeyWords.subscribers') }}"
                 icon="fe-users"></x-sidebar-tab>
+            <x-sidebar-tab href="{{ route('admin.testimonials.index') }}" name="{{ __('KeyWords.testimonials') }}"
+                icon="fe-message-circle"></x-sidebar-tab>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
             <span>Apps</span>
