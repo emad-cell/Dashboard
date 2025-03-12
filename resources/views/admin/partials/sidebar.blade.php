@@ -41,6 +41,8 @@
                 icon="fe-message-circle"></x-sidebar-tab>
             <x-sidebar-tab href="{{ route('admin.settings.index') }}" name="{{ __('KeyWords.settings') }}"
                 icon="fe-settings"></x-sidebar-tab>
+            <x-sidebar-tab href="{{ route('admin.companies.index') }}" name="{{ __('KeyWords.companies') }}"
+                icon="fe-slack"></x-sidebar-tab>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
             <span>Apps</span>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FeatureController;
@@ -57,6 +58,10 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->midd
         //======================Setting
         Route::controller(SettingController::class)->group(function () {
             Route::resource('settings', SettingController::class)->only(['index', 'update']);
+        });
+        //======================Company
+        Route::controller(CompanyController::class)->group(function () {
+            Route::resource('companies', CompanyController::class);
         });
     });
     require __DIR__.'/auth.php';

@@ -17,6 +17,7 @@ return [
     'home'=>'Home',
     //common
     'id'=>'Id',
+    'image_name'=>'Image Name',
     'components'=>'Components',
     'action'=>'Actions',
     'no_records_found'=>'No Records Found',
@@ -65,5 +66,8 @@ return [
     //settings
     'settings'=>'Settings',
     'edit_settings'=>'Edit Settings',
+    //company
+    'companies'=>'Companies',
+    'company'=>'Company',
 
 ];
