@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::name('front.')->group(function () {
 });
 
 //Admin Route
-Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middleware(['localeSessionRedirect','localizationRedirect','localeViewPath'])->group(function () {
+Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')->middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
 
     Route::middleware('auth')->group(function () {
         //======================home page
@@ -43,19 +44,20 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middle
         });
         //======================Message
         Route::controller(MessageController::class)->group(function () {
-            Route::resource('messages', MessageController::class)->only(['index','show','destroy']);
+            Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
         });
         //======================subscribers
         Route::controller(SubscriberController::class)->group(function () {
-            Route::resource('subscribers', SubscriberController::class)->only(['index','destroy']);
+            Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy']);
         });
         //======================Testimonial
         Route::controller(TestimonialController::class)->group(function () {
             Route::resource('testimonials', TestimonialController::class);
         });
+        //======================Setting
+        Route::controller(SettingController::class)->group(function () {
+            Route::resource('settings', SettingController::class)->only(['index', 'update']);
+        });
     });
-
     require __DIR__.'/auth.php';
 });
-
-

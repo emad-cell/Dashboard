@@ -16,6 +16,7 @@ return [
     //home page
     'home'=>'Home',
     //common
+    'id'=>'Id',
     'components'=>'Components',
     'action'=>'Actions',
     'no_records_found'=>'No Records Found',
@@ -53,5 +54,16 @@ return [
     'add_new_testimonials'=>'Add New Testimonials',
     'show_testimonials'=>'Show Testimonials',
     'edit_testimonials'=>'edit Testimonials',
+    //testimonials
+    'address'=>'Address',
+    'phone'=>'Phone',
+    'facebook'=>'Facebook',
+    'linkedin'=>'Linkedin',
+    'youtube'=>'Youtube',
+    'instagram'=>'Instagram',
+    'twitter'=>'Twitter',
+    //settings
+    'settings'=>'Settings',
+    'edit_settings'=>'Edit Settings',
 
 ];
