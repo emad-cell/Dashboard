@@ -7,3 +7,4 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets-front') }}/js/main.js"></script>
+    <script src="https://unpkg.com/swiper@9.0.0/swiper-bundle.min.js"></script>

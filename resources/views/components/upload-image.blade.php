@@ -4,7 +4,7 @@
 </button>
 
 <!-- ملف الإدخال المخفي -->
-<input type="file" id="imageInput" style="display: none;" accept="image/*">
+<input type="file" id="imageInput" style="display: none;" name="image" accept="image/*">
 
 <script>
     function triggerFileInput() {
@@ -30,13 +30,14 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // إضافة الصورة الجديدة إلى الواجهة دون إعادة تحميل الصفحة
-                    const imgContainer = document.getElementById('images-container');
-                    imgContainer.innerHTML += `
-                <div class="image-item">
-                    <img src="${data.image_url}" class="img-thumbnail">
-                </div>
-            `;
+            //         // إضافة الصورة الجديدة إلى الواجهة دون إعادة تحميل الصفحة
+            //         const imgContainer = document.getElementById('images-container');
+            //         imgContainer.innerHTML += `
+            //     <div class="image-item">
+            //         <img src="${data.image_url}" class="img-thumbnail">
+            //     </div>
+            // `;
+             window.location.reload();
                 } else {
                     alert('Error: ' + data.message);
                 }

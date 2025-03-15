@@ -25,4 +25,5 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets-front') }}/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9.0.0/swiper-bundle.min.css">
 </head>

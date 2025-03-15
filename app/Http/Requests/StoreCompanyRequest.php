@@ -22,12 +22,12 @@ class StoreCompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image'=>'required|mimes:jpg,jpeg,mpg',
+            'image'=>'required|mimes:jpg,jpeg,png',
         ];
     }
     public function attributes(){
         return [
-            'image'=>__('keyWords.Image'),
+            'image'=>__('keyWords.image'),
         ];
         }
 }

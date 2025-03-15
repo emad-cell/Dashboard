@@ -8,6 +8,7 @@
                     <h2 class="h5 page-title">{{ __('keyWords.companies') }}</h2>
                     <div>
                         <x-action-button href="{{ route('admin.companies.create') }}" type='create'></x-action-button>
+                        {{-- <x-upload-image></x-upload-image> --}}
                     </div>
                 </div>
                 <div class="card shadow">
@@ -29,7 +30,7 @@
                                             <td>{{ $companies->firstItem() + $loop->index }}</td>
                                             <td>{{ $company->image }}</td>
                                             <td>
-                                                <img src="{{ asset("storage/companies/$company->image ") }}" width="250px" alt="">
+                                                <img src="{{ asset("storage/companies/$company->image ") }}" width="100px" alt="">
                                             </td>
                                             <td >
                                                 <x-action-button href="{{ route('admin.companies.edit', $company) }}" type='edit'></x-action-button>

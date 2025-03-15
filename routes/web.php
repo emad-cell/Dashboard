@@ -1,9 +1,9 @@
 <?php
-
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubscriberController;
@@ -22,11 +22,25 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 //Front Route
-Route::name('front.')->group(function () {
-    Route::view('/', 'front.index')->name('index');
-    Route::view('/about', 'front.about')->name('about');
-    Route::view('/service', 'front.service')->name('service');
-    Route::view('/contact', 'front.contact')->name('contact');
+Route::name('front.')->controller(FrontController::class)->group(function () {
+    //======================home page
+    Route::get('/', 'index')->name('index');
+
+    //======================subscripe
+    Route::post('/subscriber/store', 'storeSubscribe')->name('subscribe.store');
+
+
+    //======================contct
+    Route::post('/message/store', 'storeMessage')->name('message.store');
+
+    //======================about page
+    Route::get('/about', 'about')->name('about');
+
+    //======================service page
+    Route::get('/service', 'service')->name('service');
+
+    //======================contact page
+    Route::get('/contact', 'contact')->name('contact');
 });
 
 //Admin Route

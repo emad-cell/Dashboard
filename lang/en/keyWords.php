@@ -69,5 +69,7 @@ return [
     //company
     'companies'=>'Companies',
     'company'=>'Company',
+    'add_new_companies'=>'Add New Companies',
+    'edit_companies'=>'edit Companies',
 
 ];

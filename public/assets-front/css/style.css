@@ -5,7 +5,6 @@
     --dark: #0E2E50;
 }
 
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -157,7 +156,7 @@
         border-bottom: 1px solid rgba(256, 256, 256, .2);
         z-index: 999;
     }
-    
+
     .sticky-top.navbar {
         position: fixed;
         background: #FFFFFF;
@@ -434,4 +433,17 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+.testimonial-carousel .owl-stage {
+    display: flex;
+}
+
+.testimonial-item {
+    margin: 0 15px;
+}
+
+.testimonial-content {
+    background: #fff;
+    transition: 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }

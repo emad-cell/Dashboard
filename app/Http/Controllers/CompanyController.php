@@ -33,12 +33,16 @@ class CompanyController extends Controller
     public function store(StoreCompanyRequest $request)
     {
         //
-        $data = $request->validated();
+        $data = $request->all();
         $image= $request->image;
         $imagename = time() . '-' . $image->getClientOriginalName();
         $image->storeAs('companies',$imagename,'public');
         $data['image'] = $imagename;
         Company::create($data);
+    //     return response()->json([
+    //     'success' => true,
+    //     'image_url' => asset("storage/companies/$imagename")
+    // ]);
         return to_route('admin.companies.index')->with('success',__('keyWords.create_successfully'));
     }
 
